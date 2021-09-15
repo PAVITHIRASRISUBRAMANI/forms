@@ -1,64 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script type="text/javascript">
-        function processform()
-        {
-            document.getElementbyId("firstname").innerHTML = document.submitform.name.value;
-            document.getElementbyId("lastname").innerHTML = document.submitform.name.value;
-            document.getElementbyId("emailid").innerHTML = document.submitform.emailid.value;
-            document.getElementbyId("password").innerHTML = document.submitform.password.value;
-            document.getElementbyId("confirmpassword").innerHTML = document.submitform.confirmpassword.value;
-        }
-    </script>
-</head>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function showInput() {
+        document.getElementById('display').innerHTML = document.getElementById("user_name").value;
+        document.getElementById('display').innerHTML = document.getElementById("user_email").value;
+        document.getElementById('display').innerHTML = document.getElementById("user_password").value;
+    }
+  </script>
+  </head>
 <body>
-    <form name="#submitform">
-        <div class="row mb-4">
-          <div class="col">
-            <div class="form-outline">
-               <label class="form-label" for="form">First Name</label>
-               <input type="text" name="name" id="#firstname" value="Pavi" class="form-controll">
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-outline">
-              <label class="form-label" for="form">Last name</label>
-              <input type="text"  class="form-control"id="#lastname" name="name" value="Sri">
-            </div>
-          </div>
-        </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form">Email address</label>
-          <input type="email" id="#emailid" class="form-control" name="email" value="pavi@gmail.com">
-        </div>
-        <div class="form-outline mb-4">
-          <label class="form-label" for="form">Password</label>
-          <input type="password" id="#password" class="form-control" name="password" value="1234">
-        </div>
-        <div class="form-outline mb-4">
-            <label class="form-label" for="form">Confirm Password</label>
-            <input type="password" id="#confirmpassword" class="form-control" name="confirmpassword" value="1234">
-        </div>
-        <div class="form-check d-flex justify-content-center mb-4">
-          <input
-            class="form-check-input me-2"
-            type="checkbox"
-            value=""
-            id="checkbox"
-            checked
-          />
-          <label class="form-check-label" for="form">
-            Remember me
-          </label>
-        </div>
-        <p>
-        <input type="button" value="Sign in" onclick="check(); return false">
-        </p>
-    </form>
+  <form>
+    <label><b>Enter your name</b></label>
+    <input type="text" name="name" id="#user_name">
+    <label><b>Enter email-id</b></label>
+    <input type="email" name="email-id" id="#user_email">
+    <label><b>Enter Password</b></label>
+    <input type="password" name="Password" id="#user_password">
+  </form>
+  <input type="button" value="submit" onclick="showInput();"><br/>
+  <label>The form details are: </label>
+  <p><span id="#display"></span></p>
 </body>
 </html>
